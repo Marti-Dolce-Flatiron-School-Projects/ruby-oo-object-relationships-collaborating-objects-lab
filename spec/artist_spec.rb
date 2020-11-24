@@ -31,12 +31,17 @@ describe 'Artist' do
 
   describe '#songs' do
     it 'lists all songs that belong to this artist' do
+      # creating an artist and 3 songs
       artist = Artist.new('Michael Jackson')
       dirty_diana = Song.new("Dirty Diana")
       billie_jean = Song.new("Billie Jean")
       piano_man = Song.new("Piano Man")
+
+      # assigning an artist to each song
       dirty_diana.artist = artist
       billie_jean.artist = artist
+
+      # expect the songs to be in the artists array
       expect(artist.songs).to eq([dirty_diana, billie_jean])
     end
   end
